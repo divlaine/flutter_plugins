@@ -117,6 +117,7 @@ class GoogleMap extends StatefulWidget {
     this.polygons = const <Polygon>{},
     this.polylines = const <Polyline>{},
     this.circles = const <Circle>{},
+    this.onCameraMoveStartedWithGesture,
     this.onCameraMoveStarted,
     this.tileOverlays = const <TileOverlay>{},
     this.onCameraMove,
@@ -197,6 +198,13 @@ class GoogleMap extends StatefulWidget {
 
   /// Tile overlays to be placed on the map.
   final Set<TileOverlay> tileOverlays;
+
+  /// Called when the camera starts moving.
+  ///
+  /// This is called when onCameraMoveStarted is called expect that it has an argument
+  /// isGesture is true whenever the camera move was started by an user gesture
+  final CameraMoveStartCallback onCameraMoveStartedWithGesture;
+
 
   /// Called when the camera starts moving.
   ///
